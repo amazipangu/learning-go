@@ -5,24 +5,21 @@ import (
 )
 
 func findNumbers(nums []int) int {
-	var evenNumberDigitsCount int = 0
+	var evenCount int = 0
 
-	for i := 0; i < len(nums); i++ {
-		n := nums[i]
+	for _, num := range nums {
 		var digitsCount int = 0
 
-		for n > 0 {
-			n /= 10
+		for num > 0 {
+			num /= 10
 			digitsCount++
 		}
-
 		if digitsCount%2 == 0 {
-			evenNumberDigitsCount++
+			evenCount++
 		}
-
 	}
 
-	return evenNumberDigitsCount
+	return evenCount
 }
 
 func main() {
