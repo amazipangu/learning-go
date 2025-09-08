@@ -5,7 +5,7 @@ import (
 )
 
 func TestFindNumbers(t *testing.T) {
-	t.Run("A skelton of a test case", func(t *testing.T) {
+	t.Run("Return an array of the squares of each number", func(t *testing.T) {
 
 	})
 }
