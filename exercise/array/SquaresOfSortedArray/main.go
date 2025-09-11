@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"sort"
 )
 
 func sortedSquares(nums []int) []int {
@@ -10,7 +11,9 @@ func sortedSquares(nums []int) []int {
 	for _, num := range nums {
 		sortedArray = append(sortedArray, num*num)
 	}
-
+	sort.Slice(sortedArray, func(i, j int) bool {
+		return sortedArray[i] < sortedArray[j]
+	})
 	return sortedArray
 }
 
