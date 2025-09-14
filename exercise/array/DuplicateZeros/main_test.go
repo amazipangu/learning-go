@@ -13,7 +13,7 @@ func TestDuplicateZeros(t *testing.T) {
 		assert.Equal(t, expect, duplicatedZeros(arr))
 	})
 
-	t.Run("There is no shift to the right if 0 wouldn't appear in the arr", func(t *testing.T) {
+	t.Run("There is no shift to the right if 0 wouldn't appear in the array", func(t *testing.T) {
 		arr := []int{1, 2, 3}
 		expect := []int{1, 2, 3}
 		assert.Equal(t, expect, duplicatedZeros(arr))
