@@ -1,6 +1,9 @@
 package main
 
-import "net/http"
+import (
+	"net/http"
+	"github.com/gin-gonic/gin"
+)
 
 type Album struct {
 	ID     string  `json:"id"`
@@ -14,3 +17,7 @@ var albums []Album(
 {ID: "2", Title: "Jeru", Artist: "Gerry Mulligan", Price: 17.99},
 {ID: "3", Title: "Sarah Vaughan and Clifford Brown", Artist: "Sarah Vaughan", Price: 39.99},
 )
+
+func GetAlbums(c *gin.Context) {
+	c.IndentedJSON(http.StatusOK, albums)
+}
