@@ -22,6 +22,16 @@ func GetAlbums(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, albums)
 }
 
+func GetAlbumByID(c *gin.Context) {
+	id := c.Param("id")
+	for _, album := range albums {
+		if album.ID == id {
+			c.IndentedJSON(http.StatusOK, album)
+			return
+		}
+	}
+}
+
 func PostAlbums(c *gin.Context) {
 	var newAlbum Album
 	if err := c.BindJSON(&newAlbum); err != nil {
